@@ -14,7 +14,7 @@ export default function ProductPage() {
         Add to cart
       </button>
 
-      <div><img src='' width={640} alt='' /></div>
+      <div><img src={product.imgUrl} width={640} alt='' /></div>
     </div>
   );
 }

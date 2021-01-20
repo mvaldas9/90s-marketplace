@@ -2,15 +2,27 @@
     "products": [
         {
             "id": "23654236",
-            "name": "Spaceman suit",
+            "name": "Spaceman",
             "price": "30 EUR",
             "imgUrl": "/media/spaceman.jpg"
         },
         {
             "id": "90659631",
-            "name": "Predator suit",
+            "name": "Predator",
             "price": "42 EUR",
             "imgUrl": "/media/predator.jpg"
+        },
+        {
+            "id": "12359231",
+            "name": "Almost baby yoda",
+            "price": "12 EUR",
+            "imgUrl": "/media/pug.jpg"
+        },
+        {
+            "id": "78357631",
+            "name": "Kitty",
+            "price": "63 EUR",
+            "imgUrl": "/media/bigcat.jpg"
         }
     ]
 }
