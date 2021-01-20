@@ -1,0 +1,16 @@
+{
+    "products": [
+        {
+            "id": "23654236",
+            "name": "Spaceman suit",
+            "price": "30 EUR",
+            "imgUrl": "/media/spaceman.jpg"
+        },
+        {
+            "id": "90659631",
+            "name": "Predator suit",
+            "price": "42 EUR",
+            "imgUrl": "/media/predator.jpg"
+        }
+    ]
+}
