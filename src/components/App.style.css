@@ -1,88 +1,89 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .app-wrapper {
-    margin: 0 auto;
-    width: 960px;
-    padding: 0 20px;
+  margin: 0 auto;
+  width: 960px;
+  padding: 0 20px;
 }
 
 .app-header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
 }
 
 .app-header-logo {
-    animation: 20s 20s ease infinite funLogo;
-    color: fuchsia;
-    font-size: 36px;
-    font-style: italic;
-    font-weight: bold;
-    text-decoration: none;
+  animation: 20s 20s ease infinite funLogo;
+  color: fuchsia;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .app-header-nav {
-    display: flex;
+  display: flex;
 }
 
 .app-header-nav a {
-    color: fuchsia;
-    display: block;
-    transition: transform ease .2s;
+  color: fuchsia;
+  display: block;
+  transition: transform ease 0.2s;
 }
 
 .app-header-nav a:hover {
-    transform: rotate(-5deg);
+  transform: rotate(-5deg);
 }
 
 .app-header-nav a ~ a {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 .product-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
-    row-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
 }
 
 .product-list-item {
-    border: 1px dashed fuchsia;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    transition: transform ease .2s;
+  border: 1px dashed fuchsia;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform ease 0.2s;
 }
 
 .product-list-item:hover {
-    transform: rotate(5deg);
+  transform: rotate(5deg);
 }
 
 .product-list-item-details {
-    position: absolute;
-    bottom: 0;
-    padding: 8px;
-    background: rgba(0, 0, 0, .5);
-    left: 0;
-    right: 0;
-    font-style: italic;
-    color: fuchsia;
+  position: absolute;
+  bottom: 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  right: 0;
+  font-style: italic;
+  color: fuchsia;
 }
 
 @keyframes funLogo {
-    20%, 100% {
-        transform: rotate(360deg);
-    }
+  20%,
+  100% {
+    transform: rotate(360deg);
+  }
 }

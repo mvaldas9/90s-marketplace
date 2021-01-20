@@ -1,20 +1,24 @@
-import { useParams } from 'react-router-dom';
-import data from '../data.json';
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../redux";
 
 export default function ProductPage() {
   const { id } = useParams();
-  const product = data.products.find(product => product.id === id);
+  const products = useSelector((state) => state.products);
+  const product = products.find((product) => product.id === id);
+  const dispatch = useDispatch();
+  const addProductToCart = (productId) => dispatch(addToCart(productId));
 
   return (
     <div>
       <h1>{product.name}</h1>
       <p>Price: {product.price}</p>
 
-      <button onClick={() => console.warn('Not implemented!')}>
-        Add to cart
-      </button>
+      <button onClick={() => addProductToCart(product.id)}>Add to cart</button>
 
-      <div><img src={product.imgUrl} width={640} alt='' /></div>
+      <div>
+        <img src={product.imgUrl} width={300} alt="" />
+      </div>
     </div>
   );
 }
