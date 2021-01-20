@@ -87,3 +87,16 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+.product-button {
+  background: lightgray;
+  color: fuchsia;
+  font-size: 22px;
+  padding: 12px;
+}

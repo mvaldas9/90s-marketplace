@@ -10,14 +10,18 @@ export default function ProductPage() {
   const addProductToCart = (productId) => dispatch(addToCart(productId));
 
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>Price: {product.price}</p>
-
-      <button onClick={() => addProductToCart(product.id)}>Add to cart</button>
-
+    <div className="product">
+      <img src={product.imgUrl} alt="" width={400} />
       <div>
-        <img src={product.imgUrl} width={300} alt="" />
+        <h1>{product.name}</h1>
+        <p>Price: {product.price}</p>
+
+        <button
+          className="product-button"
+          onClick={() => addProductToCart(product.id)}
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );
