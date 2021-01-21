@@ -16,10 +16,7 @@ export default function ProductPage() {
         <h1>{product.name}</h1>
         <p>Price: {product.price}</p>
 
-        <button
-          className="product-button"
-          onClick={() => addProductToCart(product)}
-        >
+        <button className="button" onClick={() => addProductToCart(product)}>
           Add to cart
         </button>
       </div>

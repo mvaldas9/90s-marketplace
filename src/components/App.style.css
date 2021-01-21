@@ -10,6 +10,13 @@ body {
   font-size: 18px;
 }
 
+.button {
+  background: lightgray;
+  color: fuchsia;
+  font-size: 18px;
+  padding: 8px;
+}
+
 .app-wrapper {
   margin: 0 auto;
   width: 960px;
@@ -94,13 +101,6 @@ body {
   column-gap: 20px;
 }
 
-.product-button {
-  background: lightgray;
-  color: fuchsia;
-  font-size: 22px;
-  padding: 12px;
-}
-
 .cart-table {
   border-collapse: collapse;
   width: 100%;
@@ -127,4 +127,8 @@ body {
 .cart-table img {
   margin-right: 20px;
   vertical-align: middle;
+}
+
+.cart-table-quantity-control span {
+  padding: 0 10px;
 }

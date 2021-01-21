@@ -1,10 +1,18 @@
-import { useSelector } from "react-redux";
-import { getCartTotalPrice, getCartTotalQuantity } from "../redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  getCartTotalPrice,
+  getCartTotalQuantity,
+  addToCart,
+  removeFromCart,
+} from "../redux";
 
 export default function CartPage() {
   const cart = useSelector((state) => state.cart);
   const totalPrice = getCartTotalPrice(cart);
   const totalQuantity = getCartTotalQuantity(cart);
+  const dispatch = useDispatch();
+  const addProductToCart = (product) => dispatch(addToCart(product));
+  const removeProductFromCart = (product) => dispatch(removeFromCart(product));
 
   return (
     <div>
@@ -23,7 +31,13 @@ export default function CartPage() {
                   <img src={product.imgUrl} width="60" alt="" />
                   <strong>{product.name}</strong>
                 </td>
-                <td>{product.quantity}</td>
+                <td>
+                  <CartItemQuantity
+                    quantity={product.quantity}
+                    onIncrease={() => addProductToCart(product)}
+                    onDecrease={() => removeProductFromCart(product)}
+                  />
+                </td>
                 <td>{product.price} EUR</td>
               </tr>
             ))}
@@ -39,6 +53,20 @@ export default function CartPage() {
       ) : (
         "No items in the cart"
       )}
+    </div>
+  );
+}
+
+function CartItemQuantity({ quantity, onIncrease, onDecrease }) {
+  return (
+    <div className="cart-table-quantity-control">
+      <button onClick={onIncrease} className="button">
+        +
+      </button>
+      <span>{quantity}</span>
+      <button onClick={onDecrease} className="button">
+        -
+      </button>
     </div>
   );
 }

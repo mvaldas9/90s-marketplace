@@ -4,35 +4,61 @@ import data from "./data.json";
 const initialState = { products: data.products, cart: [] };
 
 function reducer(state = initialState, { type, payload }) {
-  switch (type) {
-    case "ADD_TO_CART":
-      let cart = state.cart.slice();
-      let newProduct = payload;
-      let productInCart = cart.find((product) => product.id === newProduct.id);
+  if (type === "ADD_TO_CART") {
+    let cart = state.cart.slice();
+    let productToAdd = payload;
+    let productInCart = cart.find((product) => product.id === productToAdd.id);
 
-      if (productInCart) {
+    if (productInCart) {
+      cart = cart.map((product) => {
+        if (product.id === productToAdd.id) {
+          return {
+            ...product,
+            quantity: ++product.quantity,
+          };
+        }
+        return product;
+      });
+    } else {
+      cart.push({
+        ...productToAdd,
+        quantity: 1,
+      });
+    }
+
+    return {
+      ...state,
+      cart,
+    };
+  } else if (type === "REMOVE_FROM_CART") {
+    let cart = state.cart.slice();
+    let productToRemove = payload;
+    let productInCart = cart.find(
+      (product) => product.id === productToRemove.id
+    );
+
+    if (productInCart) {
+      if (productInCart.quantity > 1) {
         cart = cart.map((product) => {
-          if (product.id === newProduct.id) {
+          if (product.id === productToRemove.id) {
             return {
               ...product,
-              quantity: ++product.quantity,
+              quantity: --product.quantity,
             };
           }
           return product;
         });
       } else {
-        cart.push({
-          ...newProduct,
-          quantity: 1,
-        });
+        cart = cart.filter((product) => product.id !== productToRemove.id);
       }
+    }
 
-      return {
-        ...state,
-        cart,
-      };
-    default:
-      return state;
+    return {
+      ...state,
+      cart,
+    };
+  } else {
+    return state;
   }
 }
 
@@ -46,6 +72,11 @@ export const getCartTotalPrice = (cart) => {
 
 export const addToCart = (product) => ({
   type: "ADD_TO_CART",
+  payload: product,
+});
+
+export const removeFromCart = (product) => ({
+  type: "REMOVE_FROM_CART",
   payload: product,
 });
 
