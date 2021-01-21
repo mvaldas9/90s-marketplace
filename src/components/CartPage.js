@@ -29,9 +29,11 @@ export default function CartPage() {
             ))}
           </tbody>
           <tfoot>
-            <th colSpan="3">
-              Total price of {totalQuantity} items: {totalPrice} EUR
-            </th>
+            <tr>
+              <th colSpan="3">
+                Total price of {totalQuantity} items: {totalPrice} EUR
+              </th>
+            </tr>
           </tfoot>
         </table>
       ) : (
