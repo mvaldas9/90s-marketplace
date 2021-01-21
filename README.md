@@ -10,5 +10,5 @@ Even though the task is mostly focused on cart implementation I am going to use 
 - ~~Separate concerns, better file structure~~ (30min)
 - ~~Implement a more robust router solution~~ (30min)
 - ~~Implement state managment solution~~ (1h)
-- ~~Cart functionality~~(?)
+- ~~Cart functionality~~(2h)
 - Tests
