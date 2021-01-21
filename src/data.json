@@ -3,25 +3,25 @@
         {
             "id": "23654236",
             "name": "Spaceman",
-            "price": "30 EUR",
+            "price": 30,
             "imgUrl": "/media/spaceman.jpg"
         },
         {
             "id": "90659631",
             "name": "Predator",
-            "price": "42 EUR",
+            "price": 42,
             "imgUrl": "/media/predator.jpg"
         },
         {
             "id": "12359231",
             "name": "Almost baby yoda",
-            "price": "12 EUR",
+            "price": 12,
             "imgUrl": "/media/pug.jpg"
         },
         {
             "id": "78357631",
             "name": "Kitty",
-            "price": "63 EUR",
+            "price": 63,
             "imgUrl": "/media/bigcat.jpg"
         }
     ]

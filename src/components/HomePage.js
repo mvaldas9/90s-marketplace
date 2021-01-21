@@ -16,7 +16,7 @@ export default function HomePage() {
           >
             <div className="product-list-item-details">
               {product.name}
-              <div>{product.price}</div>
+              <div>{product.price} EUR</div>
             </div>
           </Link>
         );

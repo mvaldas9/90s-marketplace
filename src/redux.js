@@ -36,6 +36,14 @@ function reducer(state = initialState, { type, payload }) {
   }
 }
 
+export const getCartTotalQuantity = (cart) => {
+  return cart.reduce((a, b) => a + b.quantity, 0);
+};
+
+export const getCartTotalPrice = (cart) => {
+  return cart.reduce((a, b) => a + b.price * b.quantity, 0);
+};
+
 export const addToCart = (product) => ({
   type: "ADD_TO_CART",
   payload: product,

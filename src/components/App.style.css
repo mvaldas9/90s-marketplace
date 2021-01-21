@@ -65,7 +65,7 @@ body {
 }
 
 .product-list-item {
-  border: 1px dashed fuchsia;
+  border: 1px solid fuchsia;
   height: 200px;
   background-size: cover;
   background-position: center;
@@ -99,4 +99,32 @@ body {
   color: fuchsia;
   font-size: 22px;
   padding: 12px;
+}
+
+.cart-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.cart-table th,
+.cart-table td {
+  text-align: right;
+  padding: 10px;
+}
+
+.cart-table td:first-child {
+  text-align: left;
+}
+
+.cart-table thead th {
+  border-bottom: 1px solid fuchsia;
+}
+
+.cart-table tfoot th {
+  border-top: 1px solid fuchsia;
+}
+
+.cart-table img {
+  margin-right: 20px;
+  vertical-align: middle;
 }
