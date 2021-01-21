@@ -6,18 +6,39 @@ const initialState = { products: data.products, cart: [] };
 function reducer(state = initialState, { type, payload }) {
   switch (type) {
     case "ADD_TO_CART":
+      let cart = state.cart.slice();
+      let newProduct = payload;
+      let productInCart = cart.find((product) => product.id === newProduct.id);
+
+      if (productInCart) {
+        cart = cart.map((product) => {
+          if (product.id === newProduct.id) {
+            return {
+              ...product,
+              quantity: ++product.quantity,
+            };
+          }
+          return product;
+        });
+      } else {
+        cart.push({
+          ...newProduct,
+          quantity: 1,
+        });
+      }
+
       return {
         ...state,
-        cart: [...state.cart, payload],
+        cart,
       };
     default:
       return state;
   }
 }
 
-export const addToCart = (productId) => ({
+export const addToCart = (product) => ({
   type: "ADD_TO_CART",
-  payload: productId,
+  payload: product,
 });
 
 export default createStore(

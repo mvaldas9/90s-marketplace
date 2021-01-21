@@ -50,6 +50,13 @@ body {
   margin-left: 15px;
 }
 
+@keyframes funLogo {
+  20%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .product-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -79,13 +86,6 @@ body {
   right: 0;
   font-style: italic;
   color: fuchsia;
-}
-
-@keyframes funLogo {
-  20%,
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .product {

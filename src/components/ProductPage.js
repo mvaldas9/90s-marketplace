@@ -7,7 +7,7 @@ export default function ProductPage() {
   const products = useSelector((state) => state.products);
   const product = products.find((product) => product.id === id);
   const dispatch = useDispatch();
-  const addProductToCart = (productId) => dispatch(addToCart(productId));
+  const addProductToCart = (product) => dispatch(addToCart(product));
 
   return (
     <div className="product">
@@ -18,7 +18,7 @@ export default function ProductPage() {
 
         <button
           className="product-button"
-          onClick={() => addProductToCart(product.id)}
+          onClick={() => addProductToCart(product)}
         >
           Add to cart
         </button>
