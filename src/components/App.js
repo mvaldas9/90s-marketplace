@@ -7,8 +7,6 @@ import CartPage from "./CartPage";
 import HomePage from "./HomePage";
 import ProductPage from "./ProductPage";
 
-import "./App.style.css";
-
 function App() {
   return (
     <div className="app-wrapper">
