@@ -15,7 +15,8 @@ export default function CartPage() {
   const removeProductFromCart = (product) => dispatch(removeFromCart(product));
 
   return (
-    <div>
+    <>
+      <h1>Your cart</h1>
       {cart.length ? (
         <table className="cart-table">
           <thead>
@@ -53,7 +54,7 @@ export default function CartPage() {
       ) : (
         "No items in the cart"
       )}
-    </div>
+    </>
   );
 }
 
