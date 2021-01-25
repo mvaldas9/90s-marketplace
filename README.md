@@ -1,4 +1,4 @@
-# Interview task for the position at CGtrader
+# Interview task
 
 Check [TASK.md](./TASK.md) for details about the task.
 
